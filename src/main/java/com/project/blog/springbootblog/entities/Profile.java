@@ -1,6 +1,7 @@
 package com.project.blog.springbootblog.entities;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -16,6 +17,7 @@ public class Profile {
 
     private LocalDate createdAt;
     private String urlImage;
+    @JsonIgnoreProperties("profile")
     @OneToOne(mappedBy = "profile")
     private User user;
 
